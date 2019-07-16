@@ -1,3 +1,15 @@
 <p>home works!</p>
 <p><a routerLink="/login">login</a></p>
 <app-msg></app-msg>
+<a
+routerLink = "/"
+[queryParams]="{ 
+    isStallingForTime: true,
+    year: 1996,
+    color: 'olive' 
+}" 
+queryParamsHandling="merge">Change query params!</a>
+
+<button (click)="handleSomethingElseClick()">Do Something Else</button>
+
+<router-outlet></router-outlet>

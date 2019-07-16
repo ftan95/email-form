@@ -63,7 +63,9 @@
                  <!--Submit-->
                 <div class="row justify-content-center mb-3">
                     <button class = "btn btn-primary" type = "submit" 
-                    (click) = "onSubmit()" [disabled] = "!signupForm.valid">
+                    (click) = "onSubmit()" [disabled] = "formDisabled || !signupForm.get('name').valid
+                    || !signupForm.get('email').valid"
+                    routerLink="/login">
                         Sign up
                     </button>
                 </div>
