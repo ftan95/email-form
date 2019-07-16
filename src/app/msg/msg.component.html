@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 form-box">
+            <form [formGroup] = "messageForm">
+                <p style = "text-align: center">New Message</p>
+
+                <div class="row">
+                    <div class="col">
+
+                        <div class="form-group row justify-content-center">
+                            <div>
+                                <input
+                                type="text"
+                                formControlName = "subject"  
+                                class="form-control"
+                                placeholder="Subject">
+                                <span *ngIf="!messageForm.get('subject').valid && messageForm.get('subject').touched"
+                                class = "form-text text-muted">Please enter a subject</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row justify-content-center">
+                            <div>
+                                <input
+                                type="text"
+                                formControlName = "To" 
+                                class="form-control"
+                                placeholder="To">
+                                <span *ngIf="!messageForm.get('To').valid && messageForm.get('To').touched"
+                                class = "form-text text-muted">Please enter a valid email</span>
+                                </div>
+                            </div>
+
+                        <div class="form-group row justify-content-center">
+                            <div>
+                                <input
+                                type="text"
+                                formControlName = "CC"  
+                                class="form-control"
+                                placeholder="CC">
+                                <span *ngIf="!messageForm.get('CC').valid && messageForm.get('CC').touched"
+                                class = "form-text text-muted">Please enter a valid email</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row justify-content-center">
+                            <div>
+                                <input
+                                type="text"
+                                formControlName = "BCC"  
+                                class="form-control"
+                                placeholder="BCC">
+                                <span *ngIf="!messageForm.get('BCC').valid && messageForm.get('BCC').touched"
+                                class = "form-text text-muted">Please enter a valid email</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row justify-content-center">
+                            <div>
+                                <textarea
+                                rows = "10"
+                                formControlName = "body"  
+                                class="form-control"
+                                placeholder="Type Message">
+                            </textarea>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+
+                <div class="row justify-content-center mb-3">
+                    <button class = "btn btn-primary" type = "submit" 
+                    (click) = "onSubmit()" [disabled] = "!messageForm.valid">
+                        Send
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
