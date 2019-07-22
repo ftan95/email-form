@@ -8,6 +8,12 @@ import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { LoginModule } from './login/login.module';
 import { MsgComponent } from './msg/msg.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserSelectComponent } from './user-select/user-select.component';
+import { AppRoutingModule } from './app-routing.module';
+import { UserComponent } from './user/user.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 const routes: Routes = [
   {
@@ -43,15 +49,20 @@ const routes: Routes = [
     AppComponent,
     SignupComponent,
     HomeComponent,
-    MsgComponent
+    MsgComponent,
+    UserListComponent,
+    UserSelectComponent,
+    UserComponent,
+    UserDetailComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
     LoginModule,
-    RouterModule.forRoot(routes)
-
+    RouterModule.forRoot(routes),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
