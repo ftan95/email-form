@@ -14,6 +14,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserComponent } from './user/user.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { HttpClientModule } from '@angular/common/http';
+import { EmailService } from './services/email.service';
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -21,7 +25,8 @@ const routes: Routes = [
     component: HomeComponent,
     data: {
       title: 'Home page!'
-    }
+    },
+    canActivate: [AuthGuardService]
   },
   {
     path: 'login',
@@ -40,7 +45,8 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    
   }
 ]
 
@@ -54,17 +60,22 @@ const routes: Routes = [
     UserSelectComponent,
     UserComponent,
     UserDetailComponent,
-    UserEditComponent
+    UserEditComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule, 
     ReactiveFormsModule,
     FormsModule,
     LoginModule,
     RouterModule.forRoot(routes),
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    EmailService,
+    AuthService,
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

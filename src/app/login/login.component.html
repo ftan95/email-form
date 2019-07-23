@@ -35,7 +35,7 @@
   
            <!--Submit-->
            <div class="row justify-content-center mb-3">
-              <button class = "btn btn-primary" type = "submit" (click) = "onSubmit()">
+              <button class = "btn btn-primary" type = "submit" (click) = "onSubmit()" [disabled] = "!loginForm.valid">
                   Login
                 </button>
           </div>
@@ -46,6 +46,8 @@
               <p><a routerLink="/signup">Create an account</a></p>
             </div>
           </div>
+
+          <p *ngIf="errorMessage">{{ errorMessage }}</p>
   
         </form>
       </div>
@@ -55,4 +57,12 @@
   <!-- <app-signup></app-signup> -->
 
   
-  
+  <!--
+    <button (click) = "logout()">Logout</button>
+
+    consturctor(private readonly auth: AuthService) {}
+
+    logout(): void {
+      this.auth.logout();
+    }
+  -->
