@@ -1,14 +1,40 @@
-<p>home works!</p>
-<p><a routerLink="/login">login</a></p>
-<a
+<div class="container-fluid">
+    <div class="row" id = "header">
+        <div class="col">
+            <img src = "https://cdn11.bigcommerce.com/s-sq9zkarfah/images/stencil/1280x1280/products/88054/184397/Magic-The-Gathering-Logo-Decal-Sticker__95820.1511151199.jpg?c=2?imbypass=on"
+             alt = "logo" id = "logo">
+           <h3>Frederick Tan</h3>
+        </div>
+        <div class="col text-right">
+            <button class = "btn btn-primary login" routerLink="/login">Login</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h3 id="name">Email Application</h3>
+        </div>
+        <div class="col text-right">
+            <a routerLink="/users">testing code</a>
+        </div>
+    </div>
+    <div class="row align-items-end" id="body">
+        <div class="col text-center" id="text">
+            <h1>Connect. Organize.</h1>
+            <h1>Just Work.</h1>
+        </div>
+        <div class="col" id = "signup">
+            <button class = "btn btn-primary" routerLink="/signup">Create Free Account</button>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<!-- <a
 routerLink = "/"
 [queryParams]="{ 
     isStallingForTime: true,
     year: 1996,
     color: 'olive' 
 }" 
-queryParamsHandling="merge">Change query params!</a>
-
-<button (click)="handleSomethingElseClick()">Do Something Else</button>
-
-<router-outlet></router-outlet>
+queryParamsHandling="merge">Change query params!</a> -->

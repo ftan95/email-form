@@ -5,7 +5,7 @@
       <div class="col" id = "main">
         <div class="row">
           <div id = "head" class="col-lg-5 align-items-center justify-content-center d-flex">
-            <img src = "./assets/Apple-logo.jpg" alt = "logo" id = "logo" (click) = "selectedNumber = '10'">
+            <img src = "https://www.brachaprinting.com/wp-content/uploads/2013/10/Apple-logo1.jpg" alt = "logo" id = "logo" (click) = "selectedNumber = '10'">
             <p>
               Frederick Tan
               Email
@@ -13,8 +13,8 @@
           </div>
         </div>
         
-        <div id = "button" class="row justify-content-center align-items-center d-flex">
-            <button appButtonColor (click) = "newMessage()">new message</button>
+        <div class="row justify-content-center align-items-center d-flex">
+            <button class = "btn btn-primary" appButtonColor (click) = "newMessage()">new message</button>
         </div>
   
         <div id = "list" class="row justify-content-left align-items-left d-flex">
@@ -28,11 +28,13 @@
                 <li><i class = "fa fa-close"></i> trash</li>
               </ul>
         </div>
-        <button (click) = "logout()">Logout</button>
+        <div class="row justify-content-center align-items-center d-flex">
+            <button class = "btn btn-primary" (click) = "logout()">Logout</button>
+        </div>
       </div>
   
       <!--Right Side-->
-      <div class="col-lg-7">
+      <div class="col-lg-7" style="background-color: white;">
         <div class="row d-flex">
           <div id = "search_bar" appSearchIcon>
               <i class = "fa fa-search" id = "search_icon"></i>

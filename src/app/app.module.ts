@@ -14,7 +14,6 @@ import { LoginModule } from './login/login.module';
 import { MsgComponent } from './msg/msg.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserSelectComponent } from './user-select/user-select.component';
-// import { AppRoutingModule } from './app-routing.module';
 import { UserComponent } from './user/user.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
@@ -87,7 +86,6 @@ const routes: Routes = [
     FormsModule,
     LoginModule,
     RouterModule.forRoot(routes),
-    //AppRoutingModule,
   ],
   exports: [RouterModule],
   // Called and Import the services here

@@ -24,8 +24,4 @@ export class HomeComponent implements OnInit {
   
   }
 
-  handleSomethingElseClick(): void {
-    this.router.navigate(['/login']);
-  }
-
 }
