@@ -33,17 +33,15 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     const form = this.loginForm.value;
-    console.log("Login Successful")
     return this.rest.get(environment.apiURL + `/users?email=${form.email}&password=${form.password}`)
     .then(res => {
       if (res[0]) {
         const userId = res[0].id;
         this.auth.setUserId(userId);
-        this.route.navigate(['/users']);
+        this.route.navigate(['/email-page']);
       } else {
         this.errorMessage = "Invalid Username or Password";
       }
-      
     });
   }
 

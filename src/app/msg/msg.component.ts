@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-msg',
@@ -9,7 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class MsgComponent implements OnInit {
   messageForm: FormGroup;
 
-  constructor() { }
+  constructor(private readonly route: Router) { }
 
   ngOnInit() {
     this.messageForm = new FormGroup({
@@ -22,7 +23,8 @@ export class MsgComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.messageForm.value);
+    console.log("Message Sent");
+    this.route.navigate(['/email-page']);
   }
 
 }

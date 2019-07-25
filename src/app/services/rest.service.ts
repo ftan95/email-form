@@ -10,8 +10,7 @@ export class RestService {
     get(url: string): Promise<any> {
         return this.http.get(url, {
             headers: this.buildOptions()
-        })
-        .toPromise()
+        }).toPromise()
         .catch(err => {
             console.error(err);
         });

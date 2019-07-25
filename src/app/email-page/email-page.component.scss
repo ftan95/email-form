@@ -1,0 +1,76 @@
+.container {
+    border-style: solid;
+    width: 80%;
+}
+
+#main {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(236, 234, 234);
+}
+
+li {
+    list-style: none;
+    font-family: 'Raleway', sans-serif;
+    padding: 15px;
+}
+
+#list {
+    margin-top: 20px;
+}
+
+#logo {
+    width: 50%;
+    margin-left: 90px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+p {
+    margin-top: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+#button {
+    margin-top: 20px;
+}
+
+button {
+    border-radius: 10%;
+    color: white;
+    width: 25vw;
+    height: 6vh;
+    background-color: rgb(2, 196, 255);
+}
+
+#search {
+    width: 300px;
+    border: none;
+    background-color: rgb(236, 234, 234);
+    border-radius: 5%;
+    padding-left: 40px;
+}
+
+#search_icon {
+    position: absolute;
+    padding: 6px 10px;
+}
+
+#search_bar {
+    margin-left: 30px;
+    margin-top: 10px;
+    background-color: rgb(236, 234, 234);
+    border-radius: 5%;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+i {
+    color: rgb(2, 196, 255);
+}
+
+.icon {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+}

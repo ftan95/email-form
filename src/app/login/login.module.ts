@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from '../home/home.component';
 
 const routes: Routes = [
     {
@@ -11,7 +12,8 @@ const routes: Routes = [
         data: {
             title: 'Login'
         }
-    }
+    },
+    {path: 'home', component: HomeComponent, data:{title:'home page'}}
 ]
 
 @NgModule({
