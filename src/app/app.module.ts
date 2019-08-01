@@ -23,6 +23,11 @@ import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { EmailPageComponent } from './email-page/email-page.component';
 import { EmailComponent } from './email-page/email/email.component';
+import { DraftFolderComponent } from './draft-folder/draft-folder.component';
+import { DraftComponent } from './draft-folder/draft/draft.component';
+import { SentComponent } from './email-page/sent/sent.component';
+import { SpamComponent } from './email-page/spam/spam.component';
+import { TrashComponent } from './email-page/trash/trash.component';
 
 const routes: Routes = [
   {
@@ -59,7 +64,8 @@ const routes: Routes = [
     {path: ':id/edit', component: UserEditComponent}
   ]},
   {path: 'email-page', component: EmailPageComponent, data:{title: 'Inbox'}},
-  {path: 'msg', component: MsgComponent, data:{title: 'New Message'}}
+  {path: 'msg', component: MsgComponent, data:{title: 'New Message'}},
+  {path: 'draft', component: DraftFolderComponent, data:{title: 'Drafts'}}
 ]
 
 @NgModule({
@@ -77,7 +83,12 @@ const routes: Routes = [
     EmailComponent,
     ButtonColorDirective,
     SearchIconDirective,
-    BadgeDirective
+    BadgeDirective,
+    DraftFolderComponent,
+    DraftComponent,
+    SentComponent,
+    SpamComponent,
+    TrashComponent
   ],
   imports: [
     BrowserModule,

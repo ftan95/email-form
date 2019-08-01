@@ -1,0 +1,19 @@
+<div id = "com">
+    <div id="icon">
+        <i *ngIf="!sentContent.readFlag" id = "test" class = "fa fa-adjust"></i>
+    </div>
+    <div id="component" class = "container">
+        <div class="row">
+            <div class="col p-0">
+                <p>{{ sentContent.name }}</p>
+            </div>
+            <div class="col">
+                <div id = "date">time</div>
+            </div>
+        </div>
+        <div class="row m-0">
+            <h5 (click) = "read()">{{ sentContent.subject }}</h5>
+            <p>{{ sentContent.text }}</p>
+        </div>
+    </div>
+</div>

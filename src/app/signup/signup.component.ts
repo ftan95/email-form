@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +12,7 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup;
   formDisabled: boolean = true;
 
-  constructor() { }
+  constructor(private readonly route: Router) { }
 
   ngOnInit() {
     this.signupForm = new FormGroup({
@@ -36,5 +37,9 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     console.log(this.signupForm.value);
+  }
+
+  cancel() {
+    this.route.navigate(["/home"]);
   }
 }

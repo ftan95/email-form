@@ -22,12 +22,13 @@
         <div id = "list" class="row justify-content-left align-items-left d-flex">
             <ul>
                 <li>
-                  <i class = "fa fa-inbox" [appBadge] = "selectedNumber" (click) = "selectedNumber = '5'"></i>  inbox
+                  <i class = "fa fa-inbox" [appBadge] = "selectedNumber" (click) = "selectedNumber = '5'"></i>
+                  <p (click)="close()">inbox</p>
                 </li>
-                <li><i class = "fa fa-angle-right"></i> draft</li>
-                <li><i class = "fa fa-play"></i>  sent</li>
-                <li><i class = "fa fa-flag"></i>  spam</li>
-                <li><i class = "fa fa-close"></i> trash</li>
+                <li><i class = "fa fa-angle-right"></i><a routerLink="/draft">draft</a></li>
+                <li><i class = "fa fa-play"></i><p (click)="openSent()">sent</p></li>
+                <li><i class = "fa fa-flag"></i><p (click)="openSpam()">spam</p></li>
+                <li><i class = "fa fa-close"></i><p (click)="openTrash()">trash</p></li>
               </ul>
         </div>
         <div class="row justify-content-center align-items-center d-flex">
@@ -48,9 +49,31 @@
           <div class = "icon"><i class = "fa fa-close"></i></div>
         </div>
         <!--Standard syntax when generating multiple components with the same template-->
-        <div *ngFor = "let c of components; let i = index"> 
+        <div #test>
+          <div *ngFor = "let c of components; let i = index"> 
             <app-email [emailContent]="c" (mailRead) = "userRead(i)"></app-email>
+            <!--<app-spam [spamContent]="c" style = "display: none"></app-spam>-->
+            <!--<app-trash [thrashContent]="c" style = "display: none"></app-thrash>-->
+          </div>
         </div>
+        
+        <div #test2 style="display: none">
+          <div *ngFor = "let c of sent">
+              <app-sent [sentContent]="c"></app-sent>
+          </div>
+        </div>
+
+        <div #spam style="display: none">
+            <div *ngFor = "let c of spamFolder">
+                <app-spam [spamContent]="c"></app-spam>
+            </div>
+          </div>
+
+        <div #trash style="display: none">
+            <div *ngFor = "let c of trashFolder">
+                <app-trash [trashContent]="c"></app-trash>
+            </div>
+          </div>
         
       </div>
     </div>

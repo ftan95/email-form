@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { draftItem } from './draftItem';
 
 @Component({
   selector: 'app-msg',
@@ -25,6 +26,15 @@ export class MsgComponent implements OnInit {
   onSubmit() {
     console.log("Message Sent");
     this.route.navigate(['/email-page']);
+  }
+
+  public test = [];
+
+  onSave() {
+    const draft = new draftItem(this.messageForm.value.To, this.messageForm.value.subject, this.messageForm.value.body);
+    this.test.push(draft);
+    console.log(this.test);
+    this.route.navigate(['/draft']);
   }
 
 }

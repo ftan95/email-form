@@ -1,0 +1,20 @@
+<div id = "com">
+        <div id="icon">
+            <i *ngIf="!trashContent.readFlag" id = "test" class = "fa fa-adjust"></i>
+        </div>
+        <div id="component" class = "container">
+            <div class="row">
+                <div class="col p-0">
+                    <p>{{ trashContent.name }}</p>
+                </div>
+                <div class="col">
+                    <div id = "date">time</div>
+                </div>
+            </div>
+            <div class="row m-0">
+                <h5 (click) = "read()">{{ trashContent.subject }}</h5>
+                <p>{{ trashContent.text }}</p>
+            </div>
+        </div>
+    </div>
+    

@@ -1,0 +1,23 @@
+#com {
+    display: flex;
+    flex-direction: row;
+}
+#component {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+}
+
+#icon {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 60px;
+}
+
+h5 {
+    margin-left: 10px;
+}
+
+#date {
+    text-align: right;
+}
